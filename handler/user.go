@@ -13,8 +13,6 @@ import (
 	jwt "github.com/form3tech-oss/jwt-go"
 )
 
-var mySigningKey = []byte("qin_secret_key")
-
 func signinHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Received one signin request")
 	w.Header().Set("Content-Type", "application/json")

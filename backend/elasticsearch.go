@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"mysocialai/constants"
+	"mysocialai/util"
 
 	"github.com/olivere/elastic/v7"
 )
@@ -18,10 +19,10 @@ type ElasticsearchBackend struct {
 
 // ========================
 // initialize EsClient, create index
-func InitElasticsearchBackend() {
+func InitElasticsearchBackend(config *util.ElasticsearchInfo) {
 	client, err := elastic.NewClient(
-		elastic.SetURL(constants.ES_URL),
-		elastic.SetBasicAuth(constants.ES_USERNAME, constants.ES_PASSWORD))
+		elastic.SetURL(config.Address),
+		elastic.SetBasicAuth(config.Username, config.Password))
 	if err != nil {
 		panic(err)
 	}

@@ -1,0 +1,12 @@
+
+elasticsearch:
+  address: "http://35.199.176.15:9200/"
+  username: "qin_username"
+  password: "qin_password"
+
+gcs:
+  bucket: "qin_social_ai_0226"
+
+token:
+  secret: "qin_secret_key"
+
