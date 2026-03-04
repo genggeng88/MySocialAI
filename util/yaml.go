@@ -1,6 +1,7 @@
 package util
 
 import (
+	"fmt"
 	"io/ioutil"
 	"path/filepath"
 
@@ -8,7 +9,7 @@ import (
 )
 
 type ElasticsearchInfo struct {
-	Address  string `yaml:"url"`
+	Address  string `yaml:"address"`
 	Username string `yaml:"username"`
 	Password string `yaml:"password"`
 }
@@ -38,6 +39,8 @@ func LoadApplicationConfig(configDir, configFile string) (*ApplicationConfig, er
 	if err != nil {
 		return nil, err
 	}
-
+	fmt.Printf("Elasticsearch: %+v\n", *config.ElasticsearchConfig)
+	fmt.Printf("GCS: %+v\n", *config.GCSConfig)
+	fmt.Printf("Token: %+v\n", *config.TokenConfig)
 	return &config, nil
 }
