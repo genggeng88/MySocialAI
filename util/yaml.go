@@ -1,7 +1,6 @@
 package util
 
 import (
-	"fmt"
 	"io/ioutil"
 	"path/filepath"
 
@@ -39,8 +38,8 @@ func LoadApplicationConfig(configDir, configFile string) (*ApplicationConfig, er
 	if err != nil {
 		return nil, err
 	}
-	fmt.Printf("Elasticsearch: %+v\n", *config.ElasticsearchConfig)
-	fmt.Printf("GCS: %+v\n", *config.GCSConfig)
-	fmt.Printf("Token: %+v\n", *config.TokenConfig)
+	// fmt.Printf("Elasticsearch: %+v\n", *config.ElasticsearchConfig)
+	// fmt.Printf("GCS: %+v\n", *config.GCSConfig)
+	// fmt.Printf("Token: %+v\n", *config.TokenConfig)
 	return &config, nil
 }
